@@ -1,15 +1,15 @@
 class Api::V1::Auth::RegistrationsController <  DeviseTokenAuth::RegistrationsController
   # skip_before_action :verify_authenticity_token
 
-  def index
-    registrations = Registration.all
-    render :json => registrations
-  end
+  # def index
+  #   registrations = Registration.all
+  #   render :json => registrations
+  # end
 
-  def create
-    build_resource(sign_up_params)
-    resource.skip_confirmation!
-  end
+  # def create
+  #   build_resource(sign_up_params)
+  #   resource.skip_confirmation!
+  # end
 
     private
     def sign_up_params

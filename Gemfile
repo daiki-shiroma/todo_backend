@@ -49,3 +49,5 @@ gem 'net-pop', require: false
 
 gem 'devise'                           
 gem 'devise_token_auth'
+
+gem "dockerfile-rails", ">= 1.1", :group => :development
