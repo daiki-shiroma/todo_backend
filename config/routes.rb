@@ -5,14 +5,15 @@ Rails.application.routes.draw do
           registrations: 'api/v1/auth/registrations'
       }
 
-      namespace :auth do
-        get 'registrations', to: 'registrations#index'
-        resources :registrations, only: %i[index]
-      end
+      resources :registrations, only: %i[index create update destroy]
+
+       namespace :auth do
+          resources :sessions, only: %i[index create update destroy]
+       end
     end
   end
   
-  root to: redirect('/todos')
+  # root to: redirect('/todos')
 
   get 'todos', to: 'todos#index'
   post "todos" => "todos#create"

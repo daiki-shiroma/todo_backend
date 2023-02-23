@@ -11,10 +11,11 @@ class Api::V1::Auth::RegistrationsController <  DeviseTokenAuth::RegistrationsCo
   #   resource.skip_confirmation!
   # end
 
+  
+
     private
     def sign_up_params
-      params.permit(:name, :nickname, :image, :email, :password, :password_confirmation)
-      # params.require(:user).permit(:name, :nickname, :image, :email, :password, :password_confirmation)
+      params.require(:registration).permit(:name, :nickname, :image, :email, :password, :password_confirmation)
     end
 
     def account_update_params
